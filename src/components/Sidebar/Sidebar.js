@@ -29,6 +29,7 @@ import {
   CardBody,
   CardTitle,
   Collapse,
+  Dropdown,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
@@ -56,12 +57,21 @@ var ps;
 
 class Sidebar extends React.Component {
   state = {
-    collapseOpen: false
+    collapseOpen: false,
+    dropdownOpen:false
   };
   constructor(props) {
     super(props);
     this.activeRoute.bind(this);
   }
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  toggle = () => {
+    this.setState({
+      dropdownOpen : !this.state.dropdownOpen
+    })
+  }
+  // setDropdownOpen(!dropdownOpen);
   // verifies if routeName is the one active (in browser input)
   activeRoute(routeName) {
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -82,12 +92,13 @@ class Sidebar extends React.Component {
   createLinks = routes => {
     return routes.map((prop, key) => {
       return (
-        <NavItem key={key}>
+        <NavItem key={key}  style={{display : prop.display}}>
           <NavLink
             to={prop.layout + prop.path}
             tag={NavLinkRRD}
             onClick={this.closeCollapse}
             activeClassName="active"
+           
           >
             <i className={prop.icon} />
             {prop.name}
@@ -126,7 +137,7 @@ class Sidebar extends React.Component {
             <span className="navbar-toggler-icon" />
           </button>
           {/* Brand */}
-          {logo ? (
+          {/* {logo ? (
             <NavbarBrand className="pt-0" {...navbarBrandProps}>
               <img
                 alt={logo.imgAlt}
@@ -134,7 +145,13 @@ class Sidebar extends React.Component {
                 src={logo.imgSrc}
               />
             </NavbarBrand>
-          ) : null}
+          ) : null} */}
+
+            <NavbarBrand className="pt-0" {...navbarBrandProps}>
+            <span style={{fontWeight: 'bolder',color: '#1189ef'}}>INTEREST MINER</span>
+            </NavbarBrand>
+
+
           {/* User */}
           <Nav className="align-items-center d-md-none">
             <UncontrolledDropdown nav>
@@ -237,10 +254,47 @@ class Sidebar extends React.Component {
                 </InputGroupAddon>
               </InputGroup>
             </Form>
+            
+            {/* strat drop down */}
+{/*             
+          <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <DropdownToggle nav caret style={{padding: '0'}}>
+            <i className="fas fa-tasks" style={{minWidth: '2.25rem',color: '#5e72e4'}} />
+            Data Management
+          </DropdownToggle>
+          <DropdownMenu>
+          
+            
+          <NavItem >
+            <Link to="/admin/view-paper">
+            <DropdownItem>  View Papers </DropdownItem>
+          </Link>
+        </NavItem>
+
+        <NavItem >
+            <Link to="/admin/add-paper">
+            <DropdownItem>  Add Papers </DropdownItem>
+          </Link>
+        </NavItem>
+        
+            {/* <DropdownItem divider />
+            <DropdownItem>Add Papers</DropdownItem> */}
+          {/* </DropdownMenu>
+        </Dropdown> */} 
+
+
+            {/* end drop down */}
+
+
+            <h6 className="navbar-heading text-muted">Data Management</h6>
+            <hr className="my-2" />
+
+           
             {/* Navigation */}
             <Nav navbar>{this.createLinks(routes)}</Nav>
-            {/* Divider */}
             <hr className="my-3" />
+
+            
             {/* Heading */}
             {/* <h6 className="navbar-heading text-muted">Documentation</h6> */}
             {/* Navigation */}

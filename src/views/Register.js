@@ -62,14 +62,17 @@ class Register extends React.Component {
       // loder true ka code 
       user.userSignup(data).then(response => {
         // loder false ka code 
+        // console.log("REG:><",response)
+
         this.setState({ isLoding: false })
         this.props.history.push("/auth/login");
 
       }
       ).catch(error => {
         this.setState({ isLoding: false })
+        // console.log("REG ERROR:><",error)
         handleServerErrors(error, toast.error)
-        // loder false ka code 
+        
       }
       )
     // }
@@ -176,7 +179,7 @@ class Register extends React.Component {
                   <InputGroup className="input-group-alternative mb-3">
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
-                        <i class="fab fa-twitter"/>
+                        <i className="fab fa-twitter"/>
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input placeholder="Twitter Account" type="text" autoComplete="new-email" name="twitterId" value={this.state.twitterId} onChange={this.handleChange} />

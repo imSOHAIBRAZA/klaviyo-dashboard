@@ -52,6 +52,7 @@ class Login extends React.Component {
       this.setState({ isLoding: false })
       if (response.status === 200) {
         localStorage.setItem("accessToken", response.data.token);
+        localStorage.setItem("name", response.data.first_name);
         this.props.history.push("/admin/index");
 
         //  <Theme.Consumer>
@@ -109,7 +110,7 @@ class Login extends React.Component {
             </CardHeader> */}
             <CardBody className="px-lg-5 py-lg-5">
               <div className="text-center text-muted mb-4">
-                <small>Or sign in with credentials</small>
+                {/* <small>Or sign in with credentials</small> */}
 
               </div>
               { this.state.isLoding ? <div className="text-center"><Loader type="Puff" color="#00BFFF" height={100} width={100} /></div>

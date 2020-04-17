@@ -8,6 +8,13 @@ import Chart from "chart.js";
 import { Line, Bar } from "react-chartjs-2";
 // reactstrap components
 import ConceptMap from "../components/ConceptMap"
+import PieChart from "../components/Chart/PieChart"
+import BarChart from "../components/Chart/BarChart"
+import CloudChart from "../components/Chart/CloudChart"
+
+
+
+
 
 import {
   Button,
@@ -34,7 +41,7 @@ import {
 
 import Header from "components/Headers/Header.js";
 
-class Index extends React.Component {
+class Visualization extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -60,7 +67,7 @@ class Index extends React.Component {
         {/* Page content */}
         <Container className="mt--7" fluid>
           <Row>
-            <Col className="mb-5 mb-xl-0" xl="8">
+            <Col className="mb-5 mb-xl-0" xl="12">
               <Card className="bg-gradient-default1 shadow">
                 <CardHeader className="bg-transparent">
                   <Row className="align-items-center">
@@ -68,7 +75,7 @@ class Index extends React.Component {
                       <h6 className="text-uppercase text-light1 ls-1 mb-1">
                         Overview
                       </h6>
-                      <h2 className="text-white1 mb-0">Concept Map</h2>
+                      <h2 className="text-white1 mb-0">Visualization</h2>
                     </div>
                     {/* <div className="col">
                       <Nav className="justify-content-end" pills>
@@ -103,14 +110,19 @@ class Index extends React.Component {
                 </CardHeader>
                 <CardBody>
                   {/* Chart */}
-                  <div className="chart1">
-                  <ConceptMap/>
+                  {/* <div className="chart1"> */}
+                  <div style={{paddingLeft: '30%'}}>
+                  <PieChart/>
+                  
+                  <BarChart/>
+                  </div>
+                  <CloudChart/>
                     {/* <Line
                       data={chartExample1[this.state.chartExample1Data]}
                       options={chartExample1.options}
                       getDatasetAtEvent={e => console.log(e)}
                     /> */}
-                  </div>
+                  {/* </div> */}
                 </CardBody>
               </Card>
             </Col>
@@ -332,4 +344,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Visualization;

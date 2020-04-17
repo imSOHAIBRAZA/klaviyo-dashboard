@@ -24,7 +24,8 @@ class AdminNavbar extends React.Component {
         >
           <Container className="px-4">
             <NavbarBrand to="/" tag={Link}>
-              <img alt="..." src={require("assets/img/brand/argon-react-white.png")} />
+            <span style={{color:'white',fontSize: '2em'}}>Interest Miner</span>
+              {/* <img alt="..." src={require("assets/img/brand/argon-react-white.png")} /> */}
             </NavbarBrand>
             <button className="navbar-toggler" id="navbar-collapse-main">
               <span className="navbar-toggler-icon" />
