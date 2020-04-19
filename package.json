@@ -1,5 +1,5 @@
 {
-  "name": "react-reduction",
+  "name": "KlaviyoDashboard",
   "version": "1.1.0",
   "private": false,
   "homepage": "https://imSOHAIBRAZA.github.io/KlaviyoDashboard",
@@ -41,6 +41,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "serve": "serve -s build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
