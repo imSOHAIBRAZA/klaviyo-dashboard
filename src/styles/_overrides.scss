@@ -1,0 +1,24 @@
+.nav-item {
+  .nav-link {
+    display: flex;
+    align-items: center;
+
+    &.active {
+      color: #373F47;
+      background: #BAC2CA;
+      opacity: 1;
+    }
+  }
+}
+
+.sidebar .nav a {
+  transition: all 150ms ease-in;
+}
+
+.card-header {
+  text-transform: uppercase;
+}
+
+.badge:empty {
+  display: inline-block;
+}
