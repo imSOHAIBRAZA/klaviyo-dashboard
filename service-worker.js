@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/KlaviyoDashboard/precache-manifest.96ca33fae6cd5e10dffcb56df772aad7.js"
+  "/klaviyo-dashboard/precache-manifest.6cb8836647f9f654e15922d3069b160e.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/KlaviyoDashboard/index.html", {
+workbox.routing.registerNavigationRoute("/klaviyo-dashboard/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
