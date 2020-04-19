@@ -1,8 +1,8 @@
 {
-  "name": "klaviyodashboard",
+  "name": "klaviyo-dashboard",
   "version": "1.1.0",
   "private": false,
-  "homepage": "https://imSOHAIBRAZA.github.io/KlaviyoDashboard",
+  "homepage": "https://imSOHAIBRAZA.github.io/klaviyo-dashboard",
   "dependencies": {
     "bootstrap": "4.3.1",
     "chart.js": "2.7.2",
